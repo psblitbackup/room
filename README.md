@@ -48,6 +48,13 @@ Route::post('/visitor/clear-session', [VisitorController::class, 'clearSession']
     'default' => env('BROADCAST_CONNECTION', 'pusher'),<br>
     'default' => env('BROADCAST_DRIVER', 'pusher'),<br>
 
+## Pusher Credential
+BROADCAST_DRIVER=pusher<br>
+PUSHER_APP_ID=1950592<br>
+PUSHER_APP_KEY=73fd4859f7ea3b680067<br>
+PUSHER_APP_SECRET=8dee730538cc3d022774<br>
+PUSHER_APP_CLUSTER=ap1<br>
+
 
 
 
