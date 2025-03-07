@@ -45,7 +45,7 @@ Route::post('/visitor/clear-session', [VisitorController::class, 'clearSession']
 ## copy resources/app.js file code
 
 ## Add below code in config/broadcast.php file
-    'default' => env('BROADCAST_CONNECTION', 'pusher'), <br>
+    'default' => env('BROADCAST_CONNECTION', 'pusher'),
     'default' => env('BROADCAST_DRIVER', 'pusher'),
 
 ## Pusher Credential
