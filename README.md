@@ -12,29 +12,29 @@ PUSHER_APP_CLUSTER=your_cluster
 
 ## Add route in web.php file
 // Agent routes
-Route::middleware(['auth'])->prefix('agent')->name('agent.')->group(function () {
-    Route::get('/chat', [AgentController::class, 'index'])->name('chat.index');
-    Route::get('/chat/{chat}', [AgentController::class, 'show'])->name('chat.show');
-    Route::post('/send-message', [AgentController::class, 'sendMessageAsAgent'])->name('send-message');
-    Route::post('/end-chat', [AgentController::class, 'endChatSession'])->name('chat.end');
-});
+Route::middleware(['auth'])->prefix('agent')->name('agent.')->group(function () { <br>
+    Route::get('/chat', [AgentController::class, 'index'])->name('chat.index'); <br>
+    Route::get('/chat/{chat}', [AgentController::class, 'show'])->name('chat.show'); <br>
+    Route::post('/send-message', [AgentController::class, 'sendMessageAsAgent'])->name('send-message'); <br>
+    Route::post('/end-chat', [AgentController::class, 'endChatSession'])->name('chat.end');<br>
+});<br>
 
 // Visitor routes
-Route::middleware('web')->group(function () {
-Route::post('/visitor/start-chat', [VisitorController::class, 'startChat'])->name('visitor.start-chat');
-Route::post('/visitor/send-message', [VisitorController::class, 'sendMessage'])->name('visitor.send-message');
-Route::get('/chat/history', [VisitorController::class, 'getChatHistory']);
-Route::post('/visitor/leave-chat', [VisitorController::class, 'leaveChat'])->name('visitor.leave-chat');
-Route::get('/chat/status', [VisitorController::class, 'getChatStatus']);
-Route::post('/visitor/clear-session', [VisitorController::class, 'clearSession'])->name('visitor.clear-session');
-});
+Route::middleware('web')->group(function () { <br>
+Route::post('/visitor/start-chat', [VisitorController::class, 'startChat'])->name('visitor.start-chat');<br>
+Route::post('/visitor/send-message', [VisitorController::class, 'sendMessage'])->name('visitor.send-message');<br>
+Route::get('/chat/history', [VisitorController::class, 'getChatHistory']);<br>
+Route::post('/visitor/leave-chat', [VisitorController::class, 'leaveChat'])->name('visitor.leave-chat');<br>
+Route::get('/chat/status', [VisitorController::class, 'getChatStatus']);<br>
+Route::post('/visitor/clear-session', [VisitorController::class, 'clearSession'])->name('visitor.clear-session');<br>
+});<br>
 
 ## Ad database migrations file in Database/migration directory from here
 
-2025_02_12_163826_add_is_online_to_users_table.php
-2025_02_12_165903_create_visitors_table.php
-2025_02_12_185747_create_chats_table.php
-2025_02_17_153136_create_messages_table.php
+2025_02_12_163826_add_is_online_to_users_table.php<br>
+2025_02_12_165903_create_visitors_table.php<br>
+2025_02_12_185747_create_chats_table.php<br>
+2025_02_17_153136_create_messages_table.php<br>
 
 ## Add AgentController methods
 ## Add VisitorController methods
@@ -45,8 +45,8 @@ Route::post('/visitor/clear-session', [VisitorController::class, 'clearSession']
 ## copy resources/app.js file code
 
 ## Add below code in config/broadcast.php file
-    'default' => env('BROADCAST_CONNECTION', 'pusher'),
-    'default' => env('BROADCAST_DRIVER', 'pusher'),
+    'default' => env('BROADCAST_CONNECTION', 'pusher'),<br>
+    'default' => env('BROADCAST_DRIVER', 'pusher'),<br>
 
 
 
